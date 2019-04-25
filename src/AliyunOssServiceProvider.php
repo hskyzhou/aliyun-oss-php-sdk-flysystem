@@ -8,6 +8,7 @@ use League\Flysystem\Filesystem;
 use OSS\OssClient;
 use HskyZhou\Flysystem\AliyunOss\AliyunOssAdapter;
 use HskyZhou\Flysystem\AliyunOss\Plugins\PutFile;
+use HskyZhou\Flysystem\AliyunOss\Plugins\PublicUrl;
 
 class AliyunOssServiceProvider extends ServiceProvider
 {
@@ -43,6 +44,7 @@ class AliyunOssServiceProvider extends ServiceProvider
             $filesystem = new Filesystem($adapter);
 
             $filesystem->addPlugin(new PutFile());
+            $filesystem->addPlugin(new PublicUrl());
 
             return $filesystem;
         });

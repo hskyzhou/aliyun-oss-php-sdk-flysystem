@@ -468,7 +468,7 @@ class AliyunOssAdapter extends AbstractAdapter
         return rtrim($path, '\\/') . '/';
     }
 
-    public function getUrl($path)
+    public function getPublicUrl($path)
     {
         $schemaCollections = collect([
             $this->options['schema'],
