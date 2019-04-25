@@ -25,7 +25,7 @@
   "extra": {
     "laravel": {
         "providers": [
-            "HskyZhou\\Flysystem\\AliyunOssServiceProvider"
+            "HskyZhou\\Flysystem\\AliyunOss\\AliyunOssServiceProvider"
         ]
     }
   }
