@@ -1,6 +1,6 @@
 <?php
 
-namespace Aliyun\Flysystem\AliyunOss;
+namespace HskyZhou\Flysystem\AliyunOss;
 
 use OSS\OssClient;
 use OSS\Core\OssException;
@@ -468,4 +468,19 @@ class AliyunOssAdapter extends AbstractAdapter
         return rtrim($path, '\\/') . '/';
     }
 
+    public function getUrl($path)
+    {
+        $schemaCollections = collect([
+            $this->options['schema'],
+            ':',
+            '//',
+        ]);
+        
+        $domainCollections = collect([
+            $this->bucket,
+            $this->options['endpoint'],
+        ]);
+
+        return $schemaCollections->implode('') . $domainCollections->implode('.') . '/' . $path;
+    }
 }

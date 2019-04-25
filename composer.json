@@ -5,13 +5,13 @@
   "authors": [
     {
       "name": "aliyun oss",
-      "homepage": "https://github.com/aliyun/aliyun-oss-php-sdk-flysystem"
+      "homepage": "https://github.com/hskyzhou/aliyun-oss-php-sdk-flysystem"
     }
   ],
   "require": {
     "php": ">=5.5.9",
     "league/flysystem": "~1.0",
-    "aliyuncs/oss-sdk-php": "~2.2.1"
+    "aliyuncs/oss-sdk-php": "~2.3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
@@ -19,7 +19,14 @@
   },
   "autoload": {
     "psr-4": {
-      "Aliyun\\Flysystem\\AliyunOss\\": "src/"
+      "HskyZhou\\Flysystem\\AliyunOss\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "HskyZhou\\Flysystem\\AliyunOssServiceProvider"
+        ]
     }
   }
 }
